@@ -1,0 +1,6 @@
+# Register bricks which can be consumed via the Mason CLI.
+# https://github.com/felangel/mason
+bricks:
+  # Sample Brick
+  # Run `mason make hello` to try it out.
+  custom_lint_brick: 0.1.0+2
