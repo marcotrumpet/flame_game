@@ -22,7 +22,7 @@ class Hud extends PositionComponent with HasGameRef<EmberQuestGame> {
   @override
   Future<void>? onLoad() async {
     _scoreTextComponent = TextComponent(
-      text: '${game.starsCollected}',
+      text: '${game.beersCollected}',
       textRenderer: TextPaint(
         style: const TextStyle(
           fontSize: 32,
@@ -34,12 +34,12 @@ class Hud extends PositionComponent with HasGameRef<EmberQuestGame> {
     );
     add(_scoreTextComponent);
 
-    final starSprite = await game.loadSprite('star.png');
+    final beerSprite = await game.loadSprite('beer.png');
     add(
       SpriteComponent(
-        sprite: starSprite,
+        sprite: beerSprite,
         position: Vector2(game.size.x - 100, 20),
-        size: Vector2.all(32),
+        size: Vector2.all(64),
         anchor: Anchor.center,
       ),
     );
@@ -60,7 +60,7 @@ class Hud extends PositionComponent with HasGameRef<EmberQuestGame> {
 
   @override
   void update(double dt) {
-    _scoreTextComponent.text = '${game.starsCollected}';
+    _scoreTextComponent.text = '${game.beersCollected}';
     super.update(dt);
   }
 }

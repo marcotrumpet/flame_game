@@ -2,9 +2,9 @@
 
 import 'package:flame/components.dart';
 import 'package:flame_game/actors/water_enemy.dart';
+import 'package:flame_game/objects/beer.dart';
 import 'package:flame_game/objects/ground_block.dart';
 import 'package:flame_game/objects/platform_block.dart';
-import 'package:flame_game/objects/star.dart';
 
 class Block {
   Block(this.gridPosition, this.blockType);
@@ -51,7 +51,7 @@ final segment1 = [
   Block(Vector2(3, 6), PlatformBlock),
   Block(Vector2(6, 5), PlatformBlock),
   Block(Vector2(7, 5), PlatformBlock),
-  Block(Vector2(7, 7), Star),
+  Block(Vector2(7, 7), Beer),
   Block(Vector2(8, 0), GroundBlock),
   Block(Vector2(8, 1), PlatformBlock),
   Block(Vector2(8, 5), PlatformBlock),
@@ -74,7 +74,7 @@ final segment2 = [
   Block(Vector2(6, 3), PlatformBlock),
   Block(Vector2(6, 4), PlatformBlock),
   Block(Vector2(6, 5), PlatformBlock),
-  Block(Vector2(6, 7), Star),
+  Block(Vector2(6, 7), Beer),
   Block(Vector2(7, 0), GroundBlock),
   Block(Vector2(8, 0), GroundBlock),
   Block(Vector2(9, 0), GroundBlock),
@@ -92,7 +92,7 @@ final segment3 = [
   Block(Vector2(7, 0), GroundBlock),
   Block(Vector2(7, 1), PlatformBlock),
   Block(Vector2(8, 0), GroundBlock),
-  Block(Vector2(8, 8), Star),
+  Block(Vector2(8, 8), Beer),
   Block(Vector2(9, 0), GroundBlock),
 ];
 
@@ -109,7 +109,7 @@ final segment4 = [
   Block(Vector2(5, 5), PlatformBlock),
   Block(Vector2(6, 0), GroundBlock),
   Block(Vector2(6, 5), PlatformBlock),
-  Block(Vector2(6, 7), Star),
+  Block(Vector2(6, 7), Beer),
   Block(Vector2(7, 0), GroundBlock),
   Block(Vector2(8, 0), GroundBlock),
   Block(Vector2(8, 3), PlatformBlock),

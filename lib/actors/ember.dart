@@ -3,15 +3,13 @@ import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
 import 'package:flame_game/actors/water_enemy.dart';
 import 'package:flame_game/ember_quest.dart';
+import 'package:flame_game/objects/beer.dart';
 import 'package:flame_game/objects/ground_block.dart';
 import 'package:flame_game/objects/platform_block.dart';
-import 'package:flame_game/objects/star.dart';
 import 'package:flutter/services.dart';
 
-///
 class EmberPlayer extends SpriteAnimationComponent
     with CollisionCallbacks, KeyboardHandler, HasGameRef<EmberQuestGame> {
-  ///
   EmberPlayer({
     required super.position,
   }) : super(size: Vector2.all(64), anchor: Anchor.center);
@@ -135,9 +133,9 @@ class EmberPlayer extends SpriteAnimationComponent
       }
     }
 
-    if (other is Star) {
+    if (other is Beer) {
       other.removeFromParent();
-      game.starsCollected++;
+      game.beersCollected++;
     }
 
     if (other is WaterEnemy) {

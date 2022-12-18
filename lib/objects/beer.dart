@@ -1,25 +1,25 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/animation.dart';
 
 import '../ember_quest.dart';
 
-class Star extends SpriteComponent with HasGameRef<EmberQuestGame> {
+class Beer extends SpriteComponent with HasGameRef<EmberQuestGame> {
   final Vector2 gridPosition;
   double xOffset;
 
   final Vector2 velocity = Vector2.zero();
 
-  Star({
+  Beer({
     required this.gridPosition,
     required this.xOffset,
   }) : super(size: Vector2.all(64), anchor: Anchor.center);
 
   @override
   Future<void> onLoad() async {
-    final starImage = game.images.fromCache('star.png');
-    sprite = Sprite(starImage);
+    final beerImage = game.images.fromCache('beer.png');
+    sprite = Sprite(beerImage);
     position = Vector2(
       (gridPosition.x * size.x) + xOffset + (size.x / 2),
       game.size.y - (gridPosition.y * size.y) - (size.y / 2),

@@ -3,9 +3,9 @@ import 'package:flame/game.dart';
 import 'package:flame_game/actors/ember.dart';
 import 'package:flame_game/actors/water_enemy.dart';
 import 'package:flame_game/managers/segment_manager.dart';
+import 'package:flame_game/objects/beer.dart';
 import 'package:flame_game/objects/ground_block.dart';
 import 'package:flame_game/objects/platform_block.dart';
-import 'package:flame_game/objects/star.dart';
 import 'package:flame_game/overlays/hud.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class EmberQuestGame extends FlameGame
   late double lastBlockXPosition = 0.0;
   late UniqueKey lastBlockKey;
 
-  int starsCollected = 0;
+  int beersCollected = 0;
   int health = 3;
 
   @override
@@ -29,7 +29,7 @@ class EmberQuestGame extends FlameGame
       'ground.png',
       'heart_half.png',
       'heart.png',
-      'star.png',
+      'beer.png',
       'water_enemy.png',
     ]);
     initializeGame(true);
@@ -67,12 +67,11 @@ class EmberQuestGame extends FlameGame
   }
 
   void reset() {
-    starsCollected = 0;
+    beersCollected = 0;
     health = 3;
     initializeGame(false);
   }
 
-  ///
   void loadGameSegments(int segmentIndex, double xPositionOffset) {
     for (final block in segments[segmentIndex]) {
       switch (block.blockType) {
@@ -88,8 +87,8 @@ class EmberQuestGame extends FlameGame
             xOffset: xPositionOffset,
           ));
           break;
-        case Star:
-          add(Star(
+        case Beer:
+          add(Beer(
             gridPosition: block.gridPosition,
             xOffset: xPositionOffset,
           ));
